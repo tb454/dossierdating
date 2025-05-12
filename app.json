@@ -1,13 +1,19 @@
 {
   "expo": {
-    "name": "dossier-dating-frontend",
-    "slug": "dossier-dating-frontend",
+    "name": "Dossier Dating",
+    "slug": "dossier-dating",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "dossierdatingfrontend",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
+    "scheme": "dossierdating",
+    "platforms": ["ios", "android", "web"],
+    "icon": "./assets/images/icon.png",
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "imageWidth": 200,
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
     "ios": {
       "supportsTablet": true
     },
@@ -22,21 +28,6 @@
       "bundler": "metro",
       "output": "static",
       "favicon": "./assets/images/favicon.png"
-    },
-    "plugins": [
-      
-      [
-        "expo-splash-screen",
-        {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
-        }
-      ]
-    ],
-    "experiments": {
-      "typedRoutes": true
     }
   }
 }
