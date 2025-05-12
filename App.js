@@ -3,7 +3,7 @@ import { SafeAreaView, View, Text, Button, StyleSheet } from 'react-native';
 
 export default function App() {
   const [stats, setStats] = useState({ users: 0, dates: 0, reviews: 0 });
-  const API_BASE = 'http://localhost:8000'; // or your LAN IP
+  const API_BASE = 'http://localhost:8000';
 
   const fetchStats = async () => {
     try {
