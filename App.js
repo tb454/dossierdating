@@ -3,7 +3,7 @@ import { SafeAreaView, View, Text, Button, StyleSheet } from 'react-native';
 
 export default function App() {
   const [stats, setStats] = useState({ users: 0, dates: 0, reviews: 0 });
-  const API_BASE = 'http://localhost:8000'; // change if testing from phone
+  const API_BASE = 'http://localhost:8000'; // or your LAN IP
 
   const fetchStats = async () => {
     try {
@@ -22,21 +22,18 @@ export default function App() {
       body: JSON.stringify({ name: 'SampleA' }),
     });
     const { id: id1 } = await r1.json();
-
     const r2 = await fetch(`${API_BASE}/dossier/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: 'SampleB' }),
     });
     const { id: id2 } = await r2.json();
-
     const rd = await fetch(`${API_BASE}/dossier/create_date`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ user1: id1, user2: id2 }),
     });
     const { date_id } = await rd.json();
-
     await fetch(`${API_BASE}/dossier/submit_review`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -46,7 +43,6 @@ export default function App() {
         comment: 'Great date!',
       }),
     });
-
     fetchStats();
   };
 
