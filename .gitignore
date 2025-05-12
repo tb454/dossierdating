@@ -37,3 +37,10 @@ yarn-error.*
 *.tsbuildinfo
 
 app-example
+
+node_modules/
+.vscode/
+__pycache__/
+*.pyc
+venv/
+.DS_Store
