@@ -1,10 +1,21 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware       # ← add this import
 from pydantic import BaseModel
 from typing import Dict, List, Optional
 import asyncio
 import httpx
 
 app = FastAPI(title="Dossier Dating API")
+
+# —————— CORS MIDDLEWARE ——————
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],      # in prod lock this down to your domain(s)
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+# ——————————————————————————————
 
 # In-memory stores
 USERS: Dict[int, Dict] = {}
